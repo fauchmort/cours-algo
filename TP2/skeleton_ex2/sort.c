@@ -4,12 +4,35 @@
 
 void selection_sort(int *arr, int n)
 {
-    // selection sort iterative
+    for(int j=0; j<n; j++){
+        int p=arr[j];
+        int m;
+        int e;
+        for(int i=0; i<n; i++){
+            int m=arr[0];
+            if (arr[i]<m){
+                m=arr[i];
+                e=i;
+            }
+        }
+        arr[j]=m;
+        arr[e]=p;
+    }
+    return arr;
 }
 
 void insertion_sort(int *arr, int n)
 {
-    // insertion sort iterative
+    for(int i=0; i<n; i++){
+        int k=arr[i];
+        int j=i-1;
+        while (j>=0 && arr[j]>k){
+            arr[j+1]=arr[j];
+            j-=1;
+        }
+        arr[j+1]=k;
+    }
+    return arr;
 }
 
 void bubble_sort(int *arr, int n)

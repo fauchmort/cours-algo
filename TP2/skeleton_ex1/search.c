@@ -5,7 +5,7 @@
 
 int linear_search(int *arr, int n, int target)
 {
-    for ( i=0, i<n , i++){
+    for (int i=0; i<n; i++){
         if (arr[i] == target) {
             return i;
         }
@@ -17,17 +17,17 @@ int jump_search(int *arr, int n, int target)
 {
     if (is_sorted_nondecreasing == 1){
         int j=sqrt(n);
-        int m=j
+        int m=j;
         int p=0;
-        while arr[min_int(m,n)-1]<target{
+        while (arr[min_int(m,n)-1]<target){
             p=m;
-            m+=j
+            m+=j;
             if (p>=n) {
-                return -1
+                return -1;
             }
-            for (i=p, i<min_int(m,n) , i++){
+            for (int i=p; i<min_int(m,n) ; i++){
                 if (arr[i] == target){
-                    return i
+                    return i;
                 }
             }
         }
@@ -40,9 +40,11 @@ int binary_search(int *arr, int n, int target)
     if (is_sorted_nondecreasing == 1){
         int a=0;
         int b=n;
-        while arr[c]!=target{
-            int s=i;
-            int c = (b-a)/2;
+        int c;
+        int s;
+        while (arr[c]!=target){
+            c = (b-a)/2;
+            s=c;
             if (target< arr[c]){
                 b=c;
             }
